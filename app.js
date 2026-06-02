@@ -7,13 +7,16 @@ let fromUnit = document.querySelector("#fromUnit").value;
 let toUnit = document.querySelector("#toUnit").value;
 
 // sections
+let convetSection = document.getElementById("converter");
 let leng = document.getElementById("len");
 let weight = document.getElementById("wei");
 let temp = document.getElementById("temp");
 let btn1 = document.getElementById("btn1");
 let btn2 = document.getElementById("btn2");
 let btn3 = document.getElementById("btn3");
-
+let resultSection = document.querySelector(".display-result");
+let resetBtn = document.getElementById("btn-reset");
+resultSection.style.display = "none";
 
 lenTab.addEventListener("click", function(){
     weight.style.display = "none"
@@ -24,6 +27,9 @@ lenTab.addEventListener("click", function(){
     weiTab.classList.remove("clicked");
     tempTab.classList.remove("clicked");
     currentTab = "leng";
+
+    convetSection.style.display = "block";
+    resultSection.style.display = "none";
 })
 
 weiTab.addEventListener("click", function(){
@@ -36,6 +42,8 @@ weiTab.addEventListener("click", function(){
     lenTab.classList.remove("tab1");
     lenTab.classList.remove("clicked");
     tempTab.classList.remove("clicked");
+    convetSection.style.display = "block";
+    resultSection.style.display = "none";
 })
 
 tempTab.addEventListener("click", function(){
@@ -43,11 +51,13 @@ tempTab.addEventListener("click", function(){
     leng.style.display = "none"
     weight.style.display = "none"
     temp.style.display = "block"
-
+    
     tempTab.classList.add("clicked");
     lenTab.classList.remove("tab1");
     lenTab.classList.remove("clicked");
     weiTab.classList.remove("clicked");
+    convetSection.style.display = "block";
+    resultSection.style.display = "none";
 })
 
 
@@ -92,12 +102,23 @@ function convert(){
         let res = cel;
         if (toUnit === 'f') {res = (9/5) * cel + 32}
         else if (toUnit === 'k') {res = cel + 273.15}
-
+        result = res;
         console.log(`${inputValue} ${fromUnit} = ${res} ${toUnit}`);
-    } 
+    }
+    result = result.toFixed(4);
+    convetSection.style.display = "none";
+    resultSection.style.display = "block";
+    document.getElementById("show-res").textContent = `${userInput3.value || 0} ${fromUnit} = ${result} ${toUnit}`;
 }
 
 btn1.addEventListener("click", convert);
 btn2.addEventListener("click", convert);
 btn3.addEventListener("click", convert);
     
+resetBtn.addEventListener("click", function(){
+    convetSection.style.display = "block";
+    resultSection.style.display = "none";
+    userInput1.value = "";
+    userInput2.value = "";
+    userInput3.value = "";
+})

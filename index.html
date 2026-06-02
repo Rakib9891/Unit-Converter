@@ -8,115 +8,111 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
-  <body class="vh-100">
-    <div class="container mt-5 p- border border-1 border-dark rounded h-75" border-radius->
-        <h1 class="m-5 ">Unit Converter</h1>
-        <div class="labels mx-5 justify-content-start d-flex gap-5 fs-4">
-            <span id="tab1" class="label tab1">Lenght</span>
-            <span id="tab2" class="label">Weight</span>
-            <span id="tab3" class="label">Temperature</span>
-        </div>
+<body>
+    <div class="custom-container">
+      <h1>Unit Converter</h1>
+      
+      <div class="labels">
+        <span id="tab1" class="label tab1">Length</span>
+        <span id="tab2" class="label">Weight</span>
+        <span id="tab3" class="label">Temperature</span>
+      </div>
 
-        <div class="position-relative">
-          <!-- length -->
-        <section id="len" class="label-container m-5">
-   
-            <form action="" class="row w-50 gap-1">
-              <label for="value1">Enter the length to convert</label>
-              <input type="number" id="value1" class="inp" required>
+      <div id="converter">
+        <!-- Length -->
+        <section id="len" class="label-container active-section">
+          <form class="converter-form">
+            <label for="value1">Enter the length to convert</label>
+            <input type="number" id="value1" class="inp" required>
 
-                <!-- from -->
-              <label for="fromUnit">Unit to Convert from</label>
-              <select id="fromUnit" >
-                <option value="mm">millimeter</option>
-                <option value="cm">centimeter</option>
-                <option value="m">meter</option>
-                <option value="km">kilometer</option>
-                <option value="in">inch</option>
-                <option value="ft">foot</option>
-                <option value="yd">yard</option>
-                <option value="mi">mile</option>
-              </select>
-                 <!-- To -->
-              <label for="toUnit">Unit to Convert to</label>
-              <select id="toUnit">
-                <option value="cm">centimeter</option>
-                <option value="mm">millimeter</option>
-                <option value="m">meter</option>
-                <option value="km">kilometer</option>
-                <option value="in">inch</option>
-                <option value="ft">foot</option>
-                <option value="yd">yard</option>
-                <option value="mi">mile</option>
-              </select>
+            <label for="fromUnit">Unit to Convert from</label>
+            <select id="fromUnit">
+              <option value="mm">millimeter</option>
+              <option value="cm">centimeter</option>
+              <option value="m">meter</option>
+              <option value="km">kilometer</option>
+              <option value="in">inch</option>
+              <option value="ft">foot</option>
+              <option value="yd">yard</option>
+              <option value="mi">mile</option>
+            </select>
 
-              <button id="btn1" class="btns mt-5" type="button">Convert</button>
-            </form>
-          
+            <label for="toUnit">Unit to Convert to</label>
+            <select id="toUnit">
+              <option value="cm">centimeter</option>
+              <option value="mm">millimeter</option>
+              <option value="m">meter</option>
+              <option value="km">kilometer</option>
+              <option value="in">inch</option>
+              <option value="ft">foot</option>
+              <option value="yd">yard</option>
+              <option value="mi">mile</option>
+            </select>
+
+            <button id="btn1" class="btns" type="button">Convert</button>
+          </form>
         </section>
 
         <!-- Weight -->
-        <section id="wei" class="label-container m-5">
-   
-            <form action="" class="row w-50 gap-1">
-              <label for="value2">Enter the weight to convert</label>
-              <input type="number" id="value2" class="inp" required>
+        <section id="wei" class="label-container">
+          <form class="converter-form">
+            <label for="value2">Enter the weight to convert</label>
+            <input type="number" id="value2" class="inp" required>
 
-                <!-- from -->
-              <label for="fromUnit2">Unit to Convert from</label>
-              <select id="fromUnit2" >
-                <option value="g">gram</option>
-                <option value="mg">milligram</option>
-                <option value="kg">kilogram</option>
-                <option value="oz">ounce</option>
-                <option value="lb">pound</option>
-              </select>
-              <!-- To -->
-              <label for="toUnit2">Unit to Convert to</label>
-              <select id="toUnit2" >
-                <option value="mg">milligram</option>
-                <option value="g">gram</option>
-                <option value="kg">kilogram</option>
-                <option value="oz">ounce</option>
-                <option value="lb">pound</option>
-              </select>
-              <button id="btn2" class="btns mt-5" type="button">Convert</button>
-            </form>
-          
+            <label for="fromUnit2">Unit to Convert from</label>
+            <select id="fromUnit2">
+              <option value="g">gram</option>
+              <option value="mg">milligram</option>
+              <option value="kg">kilogram</option>
+              <option value="oz">ounce</option>
+              <option value="lb">pound</option>
+            </select>
+
+            <label for="toUnit2">Unit to Convert to</label>
+            <select id="toUnit2">
+              <option value="mg">milligram</option>
+              <option value="g">gram</option>
+              <option value="kg">kilogram</option>
+              <option value="oz">ounce</option>
+              <option value="lb">pound</option>
+            </select>
+
+            <button id="btn2" class="btns" type="button">Convert</button>
+          </form>
         </section>
 
         <!-- Temperature -->
-        <section id="temp" class="label-container m-5">
-   
-            <form action="" class="row w-50 gap-1">
-              <label for="value3">Enter the temperature to convert</label>
-              <input type="number" id="value3" class="inp" required>
+        <section id="temp" class="label-container">
+          <form class="converter-form">
+            <label for="value3">Enter the temperature to convert</label>
+            <input type="number" id="value3" class="inp" required>
 
-                <!-- from -->
-              <label for="fromUnit3">Unit to Convert from</label>
-              <select id="fromUnit3" >
-                <option value="c">Celsius</option>
-                <option value="f">Fahrenheit</option>
-                <option value="k">Kelvin</option>
-              </select>
-              <!-- To -->
-              <label for="toUnit3">Unit to Convert to</label>
-              <select id="toUnit3" >
-                <option value="f">Fahrenheit</option>
-                <option value="c">Celsius</option>
-                <option value="k">Kelvin</option>
-              </select>
-              <button id="btn3" class="btns mt-5" type="button">Convert</button>
-            </form>
-          
+            <label for="fromUnit3">Unit to Convert from</label>
+            <select id="fromUnit3">
+              <option value="c">Celsius</option>
+              <option value="f">Fahrenheit</option>
+              <option value="k">Kelvin</option>
+            </select>
+
+            <label for="toUnit3">Unit to Convert to</label>
+            <select id="toUnit3">
+              <option value="f">Fahrenheit</option>
+              <option value="c">Celsius</option>
+              <option value="k">Kelvin</option>
+            </select>
+
+            <button id="btn3" class="btns" type="button">Convert</button>
+          </form>
         </section>
-        </div>
-        
-        
+      </div>
+      
+      <div class="display-result">
+        <p>Result of your calculation</p>
+        <div id="show-res"></div>
+        <button id="btn-reset">Reset</button>
+      </div>
     </div>
 
-
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="app.js"></script>
   </body>

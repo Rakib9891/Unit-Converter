@@ -50,7 +50,3 @@ A simple Unit Converter built with HTML, CSS, and JavaScript.
 ## Project URL
 
 https://roadmap.sh/projects/unit-converter
-
-## License
-
-This project is open source under the MIT License.
